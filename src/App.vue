@@ -33,10 +33,10 @@ export default {
     margin: auto auto;
     padding-bottom: 0 !important;
     width: 70%;
-    height: 90vh;
+    height: 95vh;
     border: 1px solid #e0e0e0;
     background-color: white;
-    box-shadow: 4px 4px 10px 3px #777;
+    box-shadow: 2px 2px 5px 1px #777;
 }
 .border-right {
     border-right: 1px solid #e0e0e0;

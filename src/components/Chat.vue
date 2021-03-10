@@ -23,6 +23,6 @@ export default {
 .wrapper {
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 95vh;
 }
 </style>
