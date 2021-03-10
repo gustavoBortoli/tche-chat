@@ -30,18 +30,6 @@
 							</v-list-item>
 							<v-divider v-if="i < 3" :key="`div${i}`"/>
 						</template>
-						<template v-for="(contact, i) in contacts">
-							<v-list-item :key="i">
-								<v-list-item-icon>
-									<v-icon>mdi-account</v-icon>
-								</v-list-item-icon>
-								<v-list-item-content>
-									<v-list-item-title>{{ contact.name }}</v-list-item-title>
-									<v-list-item-subtitle>{{ contact.status }}</v-list-item-subtitle>
-								</v-list-item-content>
-							</v-list-item>
-							<v-divider v-if="i < 3" :key="`div${i}`"/>
-						</template>
 					</v-list-item-group>
 				</v-list>
 			</div>
