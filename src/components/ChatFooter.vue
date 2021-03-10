@@ -1,6 +1,6 @@
 <template>
     <div class="input-container">
-        <ChatInput :messages="messages"/>
+        <ChatInput/>
     </div>
 </template>
 
@@ -10,11 +10,6 @@ const ChatInput = () => import(
 )
 
 export default {
-    props: {
-        messages: {
-            Type: Object
-        }
-    },
     components: {
         ChatInput
     }

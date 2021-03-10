@@ -11,7 +11,7 @@
 
 		<v-divider />
 		<v-list two-line style="padding: 0">
-			<v-list-item-group v-model="selected" active-class="blue--text">
+			<v-list-item-group v-model="selected" active-class="blue--text" mandatory>
 				<template v-for="(contact, i) in contacts">
 					<v-list-item :key="i">
 						<v-list-item-icon>
@@ -22,7 +22,7 @@
 							<v-list-item-subtitle>{{ contact.status }}</v-list-item-subtitle>
 						</v-list-item-content>
 					</v-list-item>
-					<v-divider v-if="i < 3" :key="i"/>
+					<v-divider v-if="i < 3" :key="`div${i}`"/>
 				</template>
 			</v-list-item-group>
 		</v-list>
@@ -31,23 +31,19 @@
 
 <script>
 export default {
-	data() {
-		return {
-			selected: 0,
-            contacts: [
-                {
-                    name: "Contato 1",
-                    status: "Status contato 1"
-                },
-                {
-                    name: "Contato 2",
-                    status: "Status contato 2"
-                },
-                {
-                    name: "Contato 2",
-                    status: "Status contato 2"
-                },
-            ]
+	computed: {
+		selected: {
+			get() {
+				return this.$store.state.contactSelected
+			},
+			set(value) {
+				this.$store.state.contactSelected = value
+			}
+		},
+		contacts: {
+			get() {
+				return this.$store.state.contacts
+			}
 		}
 	}
 };

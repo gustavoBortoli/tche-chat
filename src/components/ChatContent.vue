@@ -21,6 +21,13 @@ export default {
             Type: Object
         }
     },  
+    computed: {
+        messages: {
+            get() {
+                return this.$store.getters.contactMessages
+            }
+        }
+    },
     components: {
         ChatMessage
     }

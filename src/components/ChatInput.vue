@@ -26,7 +26,6 @@ export default {
             userInput: "",
             mdiSend, 
             mdiChevronUp,
-            sender: false
         };
     },
     props: {
@@ -47,15 +46,15 @@ export default {
         submitMessage() {
             if(!this.userInput)
                 return;
-            console.log(this.userInput)
+                
             var time = new Date()
             var hourSended = time.getHours() + ":" + time.getMinutes()
-            this.messages.push({
-                   content: this.userInput,
-                   messageOwner: this.sender ? 'User' : 'Third',
-                   time: hourSended
-                })
-            this.sender = !this.sender
+            
+            this.$store.commit('addMessage', {
+                content: this.userInput,
+                messageOwner: 'User',
+                time: hourSended
+            })
             this.userInput = ""
         }
     }

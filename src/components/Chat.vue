@@ -18,23 +18,6 @@ export default {
             contact: {
                 name: "Contato teste"
             },
-            messages: [
-                {
-                   content: 'Teste',
-                   messageOwner: 'Third',
-                   time: '10:30'
-                },
-                {
-                   content: 'Teste2',
-                   messageOwner: 'User',
-                   time: '10:31'
-                },
-                {
-                   content: 'Teste3',
-                   messageOwner: 'Third',
-                   time: '10:32'
-                }
-            ]
         }
     },
     components: {

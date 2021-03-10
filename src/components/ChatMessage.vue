@@ -11,7 +11,6 @@
 </template>
 
 <script>
-//import AppChatMessageTime from "@/components/chat/AppChatMessageTime.vue";
 export default {
     props: {
         message: {
