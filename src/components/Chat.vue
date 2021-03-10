@@ -1,33 +1,16 @@
 <template>
     <div class="wrapper">
         <ChatHeader :contactName="contact.name"/>
-        <div class="message-content-wrapper">
-            <div class="message-content">
-                <div class="message-container">
-                    <ChatMessage
-                        v-for="(message, idx) in messages"
-                        :message="message"
-                        :key="idx"
-                    />
-                </div>
-            </div>
-        </div>
+        <v-divider/>
+        <ChatContent :messages="messages"/>
         <ChatFooter :messages="messages"/>
     </div>
 </template>
 
 <script>
-const ChatHeader = () => import(
-    '@/components/ChatHeader.vue'
-)
-    
-const ChatMessage = () => import(
-    '@/components/ChatMessage.vue'
-)
-
-const ChatFooter = () => import(
-    '@/components/ChatFooter.vue'
-)
+import ChatHeader from'@/components/ChatHeader.vue'
+import ChatContent from'@/components/ChatContent.vue'
+import ChatFooter from'@/components/ChatFooter.vue'
 
 export default {
     data() {
@@ -55,17 +38,16 @@ export default {
         }
     },
     components: {
-        ChatHeader, ChatMessage, ChatFooter
+        ChatHeader, ChatContent, ChatFooter        
     }
 }
 </script>
 
 <style>
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 90vh;
-  padding: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
 }
 
 .header {
@@ -86,7 +68,6 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    border: 1px solid #F0F0F0;
     overflow: auto;
     display: flex;
     flex-direction: column-reverse;

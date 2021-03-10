@@ -25,7 +25,8 @@ export default {
         return {
             userInput: "",
             mdiSend, 
-            mdiChevronUp 
+            mdiChevronUp,
+            sender: false
         };
     },
     props: {
@@ -47,11 +48,14 @@ export default {
             if(!this.userInput)
                 return;
             console.log(this.userInput)
+            var time = new Date()
+            var hourSended = time.getHours() + ":" + time.getMinutes()
             this.messages.push({
                    content: this.userInput,
-                   messageOwner: 'User',
-                   time: '10:30'
+                   messageOwner: this.sender ? 'User' : 'Third',
+                   time: hourSended
                 })
+            this.sender = !this.sender
             this.userInput = ""
         }
     }

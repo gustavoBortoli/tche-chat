@@ -1,6 +1,6 @@
 <template>
     <div class="input-container">
-            <ChatInput :messages="messages"/>
+        <ChatInput :messages="messages"/>
     </div>
 </template>
 
