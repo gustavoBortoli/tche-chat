@@ -15,10 +15,9 @@
 
 <script>
 export default {
-    props: {
-        contactName: {
-            type: String,
-            required: true
+    computed: {
+        contactName() {
+            return this.$store.getters.contactSelectedName
         }
     }
 }
@@ -27,7 +26,7 @@ export default {
 <style>
 .header {
     font-size: 1.5em;
-    font-weight: 700;
+    font-weight: 500;
     padding: 10px;
     background: #F0F0F0 !important;
 }

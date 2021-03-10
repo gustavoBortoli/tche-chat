@@ -5,10 +5,7 @@
 </template>
 
 <script>
-const ChatInput = () => import(
-    '@/components/ChatInput.vue'
-)
-
+import ChatInput from '@/components/ChatInput.vue'
 export default {
     components: {
         ChatInput

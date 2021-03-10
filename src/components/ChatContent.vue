@@ -16,11 +16,6 @@
 import ChatMessage from'@/components/ChatMessage.vue'
 
 export default {
-    props: {
-        messages: {
-            Type: Object
-        }
-    },  
     computed: {
         messages: {
             get() {
